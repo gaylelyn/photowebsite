@@ -24,9 +24,19 @@
     margin-right: 20px;
 }
 
-.flex-item {
-    margin: 5px;
-}  
+.flex-item a {
+    text-decoration: underline; 
+    color: black; 
+    cursor: crosshair;
+}
+
+.flex-item a:hover {
+    color: blue; 
+}
+
+.flex-item a:visited {
+    color: black; 
+}
 
 .audio-container {
     display: flex;
@@ -51,4 +61,13 @@
 p.music-text {
     text-align: center;
     margin-bottom:1; 
+}
+
+.img-container {
+    text-align: center;
+  }
+.para {
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 40px;
 }
