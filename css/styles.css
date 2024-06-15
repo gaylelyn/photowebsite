@@ -31,7 +31,7 @@
 }
 
 .flex-item a:hover {
-    color: blue;
+    color: blue !important;
 }
 
 .flex-item a:visited {
