@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>lyn's photos</title>
+  <style>
+    .img-container {
+        text-align: center;
+      }
+    .para {
+      text-align: center;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  </style>
+  </head>
+  <body>
+    <section>
+      <h1 style="text-align:center;"> about me</h1>
+      <div class="img-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" width="250"> </div> <br>
+      
+      
+ <div class ="para"> <p style="text-align:center;"> hello, i'm lyn. i decided to create this site because i was bored one day and wanted to learn how to html. also i like taking photos and the barebones website look so i combined it all together.<br>i'm an amateur at photography, i just pick up my camera and go out and walk around with no direction. <br> here are some of my favourite photographers: <a href="https://www.magnumphotos.com/photographer/alex-webb/"><span style="cursor:crosshair">alex</span></a>, <a href="https://www.greggirard.com/"><span style="cursor:crosshair">greg</span></a> <br>anyway i hope you will enjoy some of the photos i've taken here. <br> have a wonderful day. <br> <br> <br> <a href="https://www.google.com"> <span style="cursor:crosshair">home</a></span> </div> 
+      
+  </body>
+  

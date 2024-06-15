@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>lyn's photos</title>
+  <style>
+    .para {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+    ul {
+    margin-top: 0;
+    padding-top: 0;
+    }
+  </style>
+  </head>
+  <body>
+    <section>
+      <h1 style="text-align:center;"> my gear</h1>
+      <div class="para"> <p> unfortunately no fancy camera equipment here </p> 
+        <p> <b>canon ixus 115 hs</b><br>started using this way before the digicam trend because i didn't have a good phone camera and it was my childhood camera that was still lying around. honestly it's not the best, there's no ISO setting whatsoever, but I make do.</p> 
+        <p><b>canon eos m100</b><br>it is decent but got a little bulky to carry around when i wanted to travel light. i use it with the starter lens kit. </p> 
+        <p><b>redmi note 10 pro</b><br>the not so good phone camera in question</p>
+        <p> <b>lightroom is my best friend</b> </p> 
+        <p> ---</p> 
+        <p> <b>on my wish list</b>
+        <ul><li>ricoh grii</li> <br> <img src="https://m.media-amazon.com/images/I/81lv8K8n8gL._AC_UF894,1000_QL80_.jpg" width = 150> life is beautiful
+        </ul>
+        
+      </div>
+            
+      </body> 
