@@ -1,0 +1,54 @@
+.quote {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-style: italic;
+}
+
+.author {
+    font-size: 15px;
+    /*color: #555;*/
+    text-align: center;
+    font-style: italic;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgray;
+    border-style: double;
+    padding: 2px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.flex-item {
+    margin: 5px;
+}  
+
+.audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 0;
+    height: 0px;
+}
+
+.play-button {
+    background-color: lightgray; 
+    cursor: crosshair;
+    font-family: inherit;
+    width: 60px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p.music-text {
+    text-align: center;
+    margin-bottom:1; 
+}

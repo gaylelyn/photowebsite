@@ -1,156 +1,40 @@
 <!DOCTYPE html>
-<html>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
 <head>
-<title>lyn's photos</title>
-    <style>
-        .quote {
-            font-size: 20px;
-            text-align: center;
-            margin-top: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-            font-style: italic;
-        }
-        .author {
-            font-size: 15px;
-            /*color: #555;*/
-            text-align: center;
-            font-style: italic;
-        }
-      .flex-container {
-            display: flex;
-            justify-content: space-between;
-            background-color: lightgray;
-            border-style: double;
-            padding: 2px;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-        .flex-item {
-            margin: 5px;
-        }
-      
-      a:link {
-  color: black;
-  background-color: transparent;
-  text-decoration: underline;
-}
-      a:hover {
-  color: blue;
-  background-color: transparent;
-  text-decoration: underline;
-}
-      table, th, td {
-  border:1px solid black;
-  text-align: center;
-}
-      th{
-  background-color: lightgray;
-}
-      tr:hover {background-color: #e6eeff;}
-      
-    </style>
-  </head>
-<script type="text/javascript">
-    // declare time zone formatting
-    let options = {
-        timeZone: 'Asia/Singapore',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-    },
-    formatter = new Intl.DateTimeFormat([], options);
-
-    // set time
-    setInterval(
-        () => {
-            document.querySelector("#time").innerText = formatter.format(new Date());
-        }
-    , 1000)
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lyn's photos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 <body>
-<p style="text-align: center;">
-  <font size="8"><i><b>LYN'S PHOTO WEBSITE</b></i></font><br> </p>
+  <script src="js/script.js" defer></script>
+
+  <p style="text-align: center;"> <font size="8"><i><b>LYN'S PHOTO WEBSITE</b></i></font><br> </p> 
   <hr class="solid">
-  <p style="text-align: center;"> 
-    <span id=timezone>
-    <b>TIME IN SINGAPORE - <span
-                                 id="time">...</span> </b>
+  <p style="text-align: center;"><span id="timezone"><b>TIME IN SINGAPORE - <span id="time">...</span></b></span></p>
+      
+  <div class="quote" id="quote">GETTING QUOTE...</div>
+  <div class="author" id="author"></div> <br>
+  
+  <div class="flex-container">
+    <p class="flex-item"></p>
+    <p class="flex-item"><a href="https://www.google.com"><b><span style="cursor:crosshair">about</span></b></a></p>
+    <p class="flex-item"><b>gear</b></p>
+    <p class="flex-item"><b>categories</b></p>
+    <p class="flex-item"><b>random</b></p>
+    <p class="flex-item"></p>
+  </div>
     
-      
-      <div class="quote" id="quote">GETTING QUOTE...</div>
-    <div class="author" id="author"></div>
-
-    <script>
-        async function fetchQuote() {
-            try {
-                let response = await fetch('https://api.quotable.io/random');
-                let data = await response.json();
-                document.getElementById('quote').innerText = `"${data.content}"`;
-                document.getElementById('author').innerText = `- ${data.author}`;
-            } catch (error) {
-                document.getElementById('quote').innerText = 'Could not fetch the quote.';
-                document.getElementById('author').innerText = '';
-            }
-        }
-
-        fetchQuote();
-    </script>
-     
-    <br>           
-      <div class="flex-container">
-        <p class="flex-item"></p>
-        <p class="flex-item"> <a href ="https://www.google.com"> <b><span style="cursor:crosshair">about</span></b></a></p>
-        <p class="flex-item"><b>gear</b></p>
-        <p class="flex-item"><b>categories</b></p>
-        <p class="flex-item"><b>random</b></p>
-        <p class="flex-item"></p>
-    </div>
-      <br>
-      <p style="text-align:center";> here's some music to accompany you </p>
-      <audio controls autoplay>
-  <source src="horse.mp3" type="audio/mpeg">
-(Your browser does not support the audio element.)
-</audio>
-      
-      <figure>
-  <img src="https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg" alt="Trulli" style="width:40%">
-  <figcaption>San Francisco, CA.</figcaption> 
-    </figure> 
-      <br>
-      <br>
-      
-      <table style="width:100%">
-  <tr>
-    <th>places</th>
-    <th style="width:30%">no. of entries</th>
-  </tr>
+  <p class="music-text">here's some music to accompany you while you scroll, or not</p>
+  <div class="audio-container">
+    <button onclick="playAudio()" class="play-button"><b>play</b></button>
+    <audio id="myAudio" src="the path which your file is.mp3"></audio>
+  </div>
+       
+  <figure> 
+    <img src="https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg" alt="Trulli" style="width:40%">
+    <figcaption>San Francisco, CA.</figcaption> 
+  </figure> 
   
-  <tr>
-    <td><a href="http://google.com"><span style="cursor:crosshair">north america</span></a></td>
-    <td>3</td>
-  </tr>
-  
-  <tr>
-    <td>japan</td>
-    <td>8</td>
-  </tr>
-  
-    <tr>
-    <td>singapore</td>
-    <td>6</td>
-  </tr>
-
-</table>
- <br>
- <br>
-      <section>
-        <h1 style="text-align:center;"> about</h1>
-        <p style="text-align:center;"> hello this is more about me and why i started this page<br> please forgive me this is my first time coding anything tbh <br> but honestly i was just bored and wanted to learn sth new</p>
-        
-        <br>
-      
-<body>
-
+</body>
 </html>
