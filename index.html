@@ -10,6 +10,7 @@
 <body>
   <script src="js/script.js" defer></script>
 
+  <!-- title stuff --> 
   <p style="text-align: center;"> <font size="8"><i><b>LYN'S PHOTO WEBSITE</b></i></font><br> </p> 
   <hr class="solid">
   <p style="text-align: center;"><span id="timezone"><b>TIME IN SINGAPORE - <span id="time">...</span></b></span></p>
@@ -17,6 +18,7 @@
   <div class="quote" id="quote">GETTING QUOTE...</div>
   <div class="author" id="author"></div> <br>
   
+  <!-- tabs --> 
   <div class="flex-container">
     <p class="flex-item"></p>
     <p class="flex-item"><a href="https://gaylelyn.github.io/photowebsite/about"><b>about</b></a></p>
@@ -25,17 +27,24 @@
     <p class="flex-item"><a href="https://gaylelyn.github.io/photowebsite/random"><b>random</b></a></p>
     <p class="flex-item"></p>
   </div>
-    
+  
+  <!-- music -->    
   <p class="music-text">here's some music to accompany you while you scroll, or not</p>
   <div class="audio-container">
-    <button onclick="playAudio()" class="play-button"><b>play</b></button>
-    <audio id="myAudio" src="the path which your file is.mp3"></audio>
+    <button class="play-button"><b>play</b></button>
+    <audio id="myAudio" src="path/to/your/file.mp3"></audio>
   </div>
-       
-  <figure> 
-    <img src="https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg" alt="Trulli" style="width:40%">
-    <figcaption>San Francisco, CA.</figcaption> 
-  </figure> 
+  <br> <br> 
   
+  <!-- photos -->      
+  <div class="photogrid" id="photogrid">
+    <!-- Images will be inserted here dynamically -->
+  </div>
+
+  <div class="columns">
+    <div class="column" id="columnA"></div>
+    <div class="column" id="columnB"></div>
+    <div class="column" id="columnC"></div>
+  </div>
 </body>
 </html>
