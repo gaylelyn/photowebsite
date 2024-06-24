@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
         data.forEach(imageData => {
           const img = new Image();
-          img.src = 'https://cdn.jsdelivr.net/gh/external/imgur/${imageData.url}';
+          img.src = 'imageData.url';
           img.classList.add('grid-image');
   
           columns[columnIndex % columns.length].appendChild(img);
