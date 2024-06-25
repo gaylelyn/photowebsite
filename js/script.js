@@ -44,21 +44,19 @@ document.addEventListener("DOMContentLoaded", function() {
   }, 1000);
 
 
-  // api is down... apparently the CORS is some temp workaround
-  // original api was https://api.quotable.io/random 
   async function fetchQuote() {
-    try {
-        let response = await fetch('https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random');
-        let data = await response.json();
-        document.getElementById('quote').innerText = `"${data[0].q}"`;
-        document.getElementById('author').innerText = `- ${data[0].a}`;
-    } catch (error) {
-        document.getElementById('quote').innerText = 'Could not fetch the quote.';
-        document.getElementById('author').innerText = '';
-    }
-}
+      try {
+          let response = await fetch('https://api.quotable.io/random');
+          let data = await response.json();
+          document.getElementById('quote').innerText = `"${data.content}"`;
+          document.getElementById('author').innerText = `- ${data.author}`;
+      } catch (error) {
+          document.getElementById('quote').innerText = 'Could not fetch the quote.';
+          document.getElementById('author').innerText = '';
+      }
+  }
 
-fetchQuote();
+  fetchQuote();
 
   // Function to toggle play/pause of audio and update button text
   function toggleAudio() {
