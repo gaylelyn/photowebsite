@@ -6,16 +6,32 @@ document.addEventListener("DOMContentLoaded", function() {
       let columnIndex = 0;
 
       data.forEach(imageData => {
+        // Create a container for the image and caption
+        const imgContainer = document.createElement('div');
+
+        // Create and configure the image element
         const img = new Image();
         img.src = imageData.url; // Corrected assignment
         img.classList.add('grid-image');
         img.loading = 'lazy';
 
-        columns[columnIndex % columns.length].appendChild(img);
+        // Append the image to the container
+        imgContainer.appendChild(img);
+
+        // Create and configure the caption element
+        const caption = document.createElement('div');
+        caption.classList.add('caption');
+        caption.textContent = imageData.caption;
+
+        // Append the caption to the container
+        imgContainer.appendChild(caption);
+
+        // Append the container to the appropriate column
+        columns[columnIndex % columns.length].appendChild(imgContainer);
         columnIndex++;
       });
     })
-    .catch(error => console.error('Error fetching images:', error)); // Add catch block for error handling
+    .catch(error => console.error('Error fetching images:', error));
 
   // Declare date and time formatting options
   let options = {
