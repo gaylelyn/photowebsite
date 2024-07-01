@@ -2,7 +2,57 @@
 <html lang="en">
 <head>
     <link rel="icon" href="https://gaylelyn.github.io/photowebsite/favicon.ico" type="image/x-icon">
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>japan</title>
+    <style>
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+        .grid-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 16px;
+        }
+        .columns {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
 <body>
-    <p> i havent figured this out yet </p>
+    <!-- Grid photo container -->
+    <div class="columns">
+        <div class="column" id="columnA"></div>
+        <div class="column" id="columnB"></div>
+        <div class="column" id="columnC"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('images.json')
+                .then(response => response.json())
+                .then(data => {
+                    const columns = document.querySelectorAll('.column');
+                    let columnIndex = 0;
+                    const tag = "japan"; // Tag to filter by
+
+                    data.forEach(imageData => {
+                        if (imageData.tags.includes(tag)) { // Filter images by tag
+                            const img = new Image();
+                            img.src = imageData.url;
+                            img.classList.add('grid-image');
+                            img.loading = 'lazy'; // Add lazy loading attribute
+
+                            columns[columnIndex % columns.length].appendChild(img);
+                            columnIndex++;
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching images:', error)); // Add catch block for error handling
+        });
+    </script>
 </body>
+</html>
