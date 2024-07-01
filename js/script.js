@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const img = new Image();
         img.src = imageData.url; // Corrected assignment
         img.classList.add('grid-image');
+        img.loading = 'lazy';
 
         columns[columnIndex % columns.length].appendChild(img);
         columnIndex++;
