@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lyn's photos</title>
@@ -27,9 +27,7 @@
             width: 65%; 
         }
 
-        table,
-        th,
-        td {
+        table, th, td {
             border: 1px solid black;
             text-align: center;
         }
@@ -47,48 +45,38 @@
             margin-left: auto;
             margin-right: auto;
         }
-
     </style>
+    <script src="js/script.js" defer></script>
 </head>
-
 <body>
-  <section>
-      <h1 style="text-align:center;"> photo categories</h1>
-    <table>
-        <tr>
-            <th>places</th>
-            <th style="width:30%">no. of entries</th>
-        </tr>
-
-        <tr>
-            <td><span class="link"><a href="https://gaylelyn.github.io/photowebsite/categories/singapore">singapore</span></a></td>
-            <td>6</td>
-        </tr>
-
-        <tr>
-            <td><span class="link"><a href="https://gaylelyn.github.io/photowebsite/categories/japan">japan</span></a></td>
-            <td>8</td>
-        </tr>
-
-        <tr>
-            <td><span class="link"><a href="https://gaylelyn.github.io/photowebsite/categories/ustates">united states</span></a></td>
-            <td>3</td>
-        </tr>
-
-        <tr>
-            <td><span class="link"><a href="https://gaylelyn.github.io/photowebsite/categories/bw">b/w (not a place ik) </span></a></td>
-            <td>3</td>
-        </tr>
-
-            </table>
-    <br> <br>
-    <img src="https://i.ytimg.com/vi/lNUxJ6SL7T0/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEMgSShlMA8=&rs=AOn4CLAaT5dVV_qRYFAax3SmxXDUFznIMA" class="center" width="250">
-  
-        <br> <br>
-    <div class="link" style="text-align:center"><a href="https://gaylelyn.github.io/photowebsite">home</a></div> 
-
-</section> 
-
+    <section>
+        <h1 style="text-align:center;">photo categories</h1>
+        <table>
+            <tr>
+                <th>places</th>
+                <th style="width:30%">no. of entries</th>
+            </tr>
+            <tr>
+                <td><span class="link"><a href="https://gaylelyn.github.io/photowebsite/categories/singapore">singapore</a></span></td>
+                <td id="singapore-count">loading...</td>
+            </tr>
+            <tr>
+                <td><span class="link"><a href="https://gaylelyn.github.io/photowebsite/categories/japan">japan</a></span></td>
+                <td id="japan-count">0</td>
+            </tr>
+            <tr>
+                <td><span class="link"><a href="https://gaylelyn.github.io/photowebsite/categories/ustates">united states</a></span></td>
+                <td id="ustates-count">0</td>
+            </tr>
+            <tr>
+                <td><span class="link"><a href="https://gaylelyn.github.io/photowebsite/categories/bw">b/w (not a place ik)</a></span></td>
+                <td id="bw-count">0</td>
+            </tr>
+        </table>
+        <br><br>
+        <img src="https://i.ytimg.com/vi/lNUxJ6SL7T0/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEMgSShlMA8=&rs=AOn4CLAaT5dVV_qRYFAax3SmxXDUFznIMA" class="center" width="250">
+        <br><br>
+        <div class="link" style="text-align:center"><a href="https://gaylelyn.github.io/photowebsite">home</a></div>
+    </section>
 </body>
-
 </html>

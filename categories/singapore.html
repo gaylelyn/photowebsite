@@ -1,8 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-    <link rel="icon" href="https://gaylelyn.github.io/photowebsite/favicon.ico" type="image/x-icon">
-    </head>
+<title>lyn's photos</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body, html {
+            margin: 0 10px;
+            padding: 0;
+        }
+
+        .photogrid {
+            display: none; 
+        }
+
+        .columns {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px; 
+        }
+
+        .column {
+        flex: 1 1 calc(33.33% - 20px); 
+        margin: 0 8px; 
+        box-sizing: border-box; 
+        }
+
+        .column img {
+        width: 100%; 
+        display: block;
+        margin-bottom: 15px; 
+        max-width: 100%; 
+        height: auto; 
+        }
+    </style>
+</head>
 <body>
-    <p> i havent figured this out yet </p>
+    <!-- Grid photo container -->
+    <h1 style="text-align:center">singapore</h1>
+    <br>
+    <p> i should really go out more often </p>
+    <div class="columns">
+        <div class="column" id="columnA"></div>
+        <div class="column" id="columnB"></div>
+        <div class="column" id="columnC"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../images.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const columns = document.querySelectorAll('.column');
+                    let columnIndex = 0;
+                    const tagFilter = "singapore"; // Tag to filter by
+
+                    console.log('Fetched data:', data);
+
+                    data.forEach(imageData => {
+                        if (imageData.tags.includes(tagFilter)) { // Filter images by tag
+                            const img = new Image();
+                            img.src = imageData.url;
+                            img.classList.add('grid-image');
+                            img.loading = 'lazy'; // Add lazy loading attribute
+
+                            columns[columnIndex % columns.length].appendChild(img);
+                            columnIndex++;
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching images:', error)); // Add catch block for error handling
+        });
+    </script>
 </body>
+</html>

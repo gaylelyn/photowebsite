@@ -1,29 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-    <link rel="icon" href="https://gaylelyn.github.io/photowebsite/favicon.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>japan</title>
+<title>lyn's photos</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-        .column {
-            float: left;
-            width: 33.33%;
-            padding: 5px;
+        body, html {
+            margin: 0 10px;
+            padding: 0;
         }
-        .grid-image {
-            width: 100%;
-            height: auto;
-            margin-bottom: 16px;
+
+        .photogrid {
+            display: none; 
         }
+
         .columns {
-            display: flex;
-            justify-content: space-around;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px; 
+        }
+
+        .column {
+        flex: 1 1 calc(33.33% - 20px); 
+        margin: 0 8px; 
+        box-sizing: border-box; 
+        }
+
+        .column img {
+        width: 100%; 
+        display: block;
+        margin-bottom: 15px; 
+        max-width: 100%; 
+        height: auto; 
         }
     </style>
 </head>
 <body>
     <!-- Grid photo container -->
+    <h1 style="text-align:center">japan</h1>
+    <br>
+    <p> might be my favourite place (country) on earth tbh </p>
     <div class="columns">
         <div class="column" id="columnA"></div>
         <div class="column" id="columnB"></div>
@@ -32,15 +48,22 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('images.json')
-                .then(response => response.json())
+            fetch('../images.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     const columns = document.querySelectorAll('.column');
                     let columnIndex = 0;
-                    const tag = "japan"; // Tag to filter by
+                    const tagFilter = "japan"; // Tag to filter by
+
+                    console.log('Fetched data:', data);
 
                     data.forEach(imageData => {
-                        if (imageData.tags.includes(tag)) { // Filter images by tag
+                        if (imageData.tags.includes(tagFilter)) { // Filter images by tag
                             const img = new Image();
                             img.src = imageData.url;
                             img.classList.add('grid-image');
