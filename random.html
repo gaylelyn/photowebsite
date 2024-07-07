@@ -1,8 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    </head>
+<title>lyn's photos</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .random-photo-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .random-photo {
+            max-height: 600px;
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+
+        a:link {
+            color: blue;
+            background-color: transparent;
+            text-decoration: underline;
+            cursor: crosshair;
+        }
+
+        a:hover {
+            color: black !important;
+        }
+
+        a:visited {
+            color: blue;
+        }
+    </style>
+</head>
 <body>
-    <p> i havent figured this out yet </p>
+    <h1 style="text-align: center;"> here is a random photo</h1>
+    <p class="link" style="text-align: center;"><a href="https://gaylelyn.github.io/photowebsite">home</a></p> 
+    <div class="random-photo-container">
+        <img id="random-photo" class="random-photo" src="">
+        <div id="photo-caption" class="caption"></div>
+        <p class="link" style="text-align: center;"><a href="https://gaylelyn.github.io/random">give me another random one</a></p> 
+    </div>
+    <script src="js/script.js"></script>
+
 </body>
+</html>

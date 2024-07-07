@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Fetch images data from JSON
     fetch('images.json')
         .then(response => response.json())
         .then(data => {
+            // Initialize variables
             const columns = document.querySelectorAll('.column');
             let columnIndex = 0;
             const tagCounts = {
@@ -11,10 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 bw: 0
             };
 
-            // Debug: Check fetched data
-            console.log('Fetched data:', data);
+            // Display a random photo
+            displayRandomPhoto(data);
 
+            // Calculate tag counts and display images
             data.forEach(imageData => {
+                // Calculate tag counts
                 imageData.tags.forEach(tag => {
                     if (tagCounts[tag] !== undefined) {
                         tagCounts[tag]++;
@@ -46,83 +50,90 @@ document.addEventListener("DOMContentLoaded", function() {
                 columnIndex++;
             });
 
-            // Debug: Check calculated tag counts
-            console.log('Calculated tag counts:', tagCounts);
-
-            // Update the table with the tag counts
-            document.getElementById('singapore-count').textContent = tagCounts.singapore;
-            document.getElementById('japan-count').textContent = tagCounts.japan;
-            document.getElementById('ustates-count').textContent = tagCounts.ustates;
-            document.getElementById('bw-count').textContent = tagCounts.bw;
+            // Update tag counts in the DOM
+            updateTagCounts(tagCounts);
         })
         .catch(error => console.error('Error fetching images:', error));
 
+    // Function to update tag counts in the DOM
+    function updateTagCounts(tagCounts) {
+        const singaporeCountElement = document.getElementById('singapore-count');
+        const japanCountElement = document.getElementById('japan-count');
+        const ustatesCountElement = document.getElementById('ustates-count');
+        const bwCountElement = document.getElementById('bw-count');
 
+        if (singaporeCountElement && japanCountElement && ustatesCountElement && bwCountElement) {
+            singaporeCountElement.textContent = tagCounts.singapore;
+            japanCountElement.textContent = tagCounts.japan;
+            ustatesCountElement.textContent = tagCounts.ustates;
+            bwCountElement.textContent = tagCounts.bw;
+        } else {
+            console.error('One or more tag count elements not found');
+        }
+    }
 
-  // Declare date and time formatting options
-  let options = {
-      timeZone: 'Asia/Singapore',
-      year: 'numeric',
-      month: 'numeric',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric',
-      weekday: 'long', // include full day of the week
-  };
+    // Function to display a random photo
+    function displayRandomPhoto(data) {
+        const randomIndex = Math.floor(Math.random() * data.length);
+        const randomPhoto = data[randomIndex];
+        const randomPhotoElement = document.getElementById('random-photo');
+        const captionElement = document.getElementById('photo-caption');
 
-  let formatter = new Intl.DateTimeFormat('en-SG', options); // 'en-SG' is English in Singapore format
+        if (randomPhotoElement && captionElement) {
+            randomPhotoElement.src = randomPhoto.url;
+            randomPhotoElement.alt = randomPhoto.caption;
+            captionElement.textContent = randomPhoto.caption;
+        } else {
+            console.error('Elements for random photo not found');
+        }
+    }
 
-  // Function to format date manually
-  function formatDateTime(date) {
-      const formattedDate = formatter.format(date).toUpperCase(); // format the date with full weekday
-      return `${formattedDate}`;
-  }
+    // Audio play/pause functionality
+    const playButton = document.querySelector('.play-button');
+    const audio = document.getElementById('myAudio');
 
-  // Set time and date
-  setInterval(() => {
-      // Format current date and time
-      document.querySelector("#time").innerText = formatDateTime(new Date());
-  }, 1000);
+    if (playButton && audio) {
+        playButton.addEventListener('click', toggleAudio);
+        audio.onended = () => {
+            playButton.innerHTML = '<b>play</b>';
+        };
+    } else {
+        console.error("Audio or play button not found");
+    }
 
-  /*
-  async function fetchQuote() {
-      try {
-          let response = await fetch('https://api.quotable.io/random');
-          let data = await response.json();
-          document.getElementById('quote').innerText = `"${data.content}"`;
-          document.getElementById('author').innerText = `- ${data.author}`;
-      } catch (error) {
-          document.getElementById('quote').innerText = 'Could not fetch the quote.';
-          document.getElementById('author').innerText = '';
-      }
-  }
+    function toggleAudio() {
+        if (audio.paused) {
+            audio.play();
+            playButton.innerHTML = "<b>stop</b>";
+        } else {
+            audio.pause();
+            audio.currentTime = 0;
+            playButton.innerHTML = "<b>play</b>";
+        }
+    }
 
-  fetchQuote();
-  */
+    // Time display functionality
+    const timeElement = document.getElementById('time');
+    setInterval(updateTime, 1000);
 
-  // Function to toggle play/pause of audio and update button text
-  function toggleAudio() {
-      var audio = document.getElementById("myAudio");
-      var playButton = document.querySelector(".play-button");
-
-      if (audio.paused) {
-          // If audio is paused, play it and change button text to 'stop'
-          audio.play();
-          playButton.innerHTML = "<b>stop</b>";
-      } else {
-          // If audio is playing, pause it and change button text to 'play'
-          audio.pause();
-          audio.currentTime = 0; // Reset audio to beginning
-          playButton.innerHTML = "<b>play</b>";
-      }
-
-      // Event listener to change button text back to 'play' when audio ends naturally
-      audio.onended = function() {
-          playButton.innerHTML = "<b>play</b>";
-      };
-  }
-
-  // Audio play/pause functionality
-  document.querySelector('.play-button').addEventListener('click', toggleAudio);
+    function updateTime() {
+        if (timeElement) {
+            const now = new Date();
+            const options = {
+                timeZone: 'Asia/Singapore',
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                weekday: 'long'
+            };
+            const formatter = new Intl.DateTimeFormat('en-SG', options);
+            const formattedDate = formatter.format(now).toUpperCase();
+            timeElement.innerText = formattedDate;
+        } else {
+            console.error('Time element not found');
+        }
+    }
 });
