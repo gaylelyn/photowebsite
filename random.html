@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-<title>lyn's photos</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lyn's photos</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         .random-photo-container {
             text-align: center;
@@ -20,11 +20,17 @@
             color: #555;
         }
 
+        h1 {
+            text-align: center;
+            font-size: 24px; /* Adjust the font size here */
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+
         a:link {
             color: blue;
             background-color: transparent;
             text-decoration: underline;
-            cursor: crosshair;
+            cursor: pointer; /* Changed from crosshair */
         }
 
         a:hover {
@@ -37,7 +43,7 @@
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;"> here is a random photo</h1>
+    <h1>here is a random photo</h1>
     <p class="link" style="text-align: center;"><a href="https://gaylelyn.github.io/photowebsite">home</a></p> 
     <div class="random-photo-container">
         <img id="random-photo" class="random-photo" src="">
@@ -45,6 +51,5 @@
         <p class="link" style="text-align: center;"><a href="https://gaylelyn.github.io/photowebsite/random">give me another random one</a></p> 
     </div>
     <script src="js/script.js"></script>
-
 </body>
 </html>
