@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Create and configure the image element
                 const img = new Image();
-                img.src = imageData.url;
+                img.src = imageData.url; // Corrected assignment
                 img.classList.add('grid-image');
                 img.loading = 'lazy';
 
