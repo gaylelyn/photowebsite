@@ -18,33 +18,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Calculate tag counts and display images
             data.forEach(imageData => {
-                // Calculate tag counts
-                imageData.tags.forEach(tag => {
-                    if (tagCounts[tag] !== undefined) {
-                        tagCounts[tag]++;
-                    }
-                });
-
                 // Create a container for the image and caption
                 const imgContainer = document.createElement('div');
-
+            
                 // Create and configure the image element
                 const img = new Image();
-                img.src = imageData.url; // Corrected assignment
+                img.src = imageData.url;
                 img.classList.add('grid-image');
                 img.loading = 'lazy';
-
+            
                 // Append the image to the container
                 imgContainer.appendChild(img);
-
+            
                 // Create and configure the caption element
                 const caption = document.createElement('div');
                 caption.classList.add('caption');
                 caption.textContent = imageData.caption;
-
+            
                 // Append the caption to the container
                 imgContainer.appendChild(caption);
-
+            
                 // Append the container to the appropriate column
                 columns[columnIndex % columns.length].appendChild(imgContainer);
                 columnIndex++;
