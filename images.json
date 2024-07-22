@@ -35,15 +35,15 @@
       "tags": ["japan"],
       "caption": "spotlight on ginza"
     },
+        {
+      "url": "https://i.pinimg.com/originals/4c/dc/e8/4cdce8ff98f5b0d4b21c4146758c8fb8.jpg",
+      "tags": ["japan"],
+      "caption": "fuji san"
+    },
     {
       "url": "https://i.pinimg.com/originals/4d/c1/ab/4dc1ab8e124494c7790913ca6effc5c1.jpg",
       "tags": ["ustates","bw"],
       "caption": "i didn't actually take the bart"
-    },
-    {
-      "url": "https://i.pinimg.com/originals/99/80/c1/9980c1847e88020e31ab1af9514de8da.jpg",
-      "tags": ["japan"],
-      "caption": "this was near a famous starbucks"
     },
     {
       "url": "https://i.pinimg.com/originals/c9/99/7e/c9997ef95cf5d539d3f04f1bb431c4f7.jpg",
@@ -112,7 +112,11 @@
       "tags": ["japan"],
       "caption": "guardian of the dark"
     },
-      
+        {
+      "url": "https://i.pinimg.com/originals/f2/2c/5e/f22c5e439e4673278bf06525e5c8fcca.jpg",
+      "tags": ["singapore"],
+      "caption": "work in progress"
+    },  
     {
       "url": "https://i.pinimg.com/originals/84/66/a5/8466a5c7ab0a8a87e88be671ae60b668.jpg",
       "tags": ["japan"],
@@ -142,7 +146,14 @@
       "url": "https://i.pinimg.com/originals/79/ca/89/79ca89ddfb5a95fcb755b85dc7f9079b.jpg",
       "tags": ["japan"],
       "caption": "24/7"
+    },
+    {
+      "url": "https://i.pinimg.com/originals/b8/4b/b1/b84bb1087e595b36cb1cc5508ca6c91e.jpg",
+      "tags": ["singapore"],
+      "caption": "i travelled very far to see the colonnade"
     }
+    
+
   ]
   
   

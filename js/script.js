@@ -59,12 +59,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const randomPhotoElement = document.getElementById('random-photo');
         const captionElement = document.getElementById('photo-caption');
 
-        if (randomPhotoElement && captionElement) {
+        if (randomPhoto && randomPhotoElement && captionElement) {
             randomPhotoElement.src = randomPhoto.url;
             randomPhotoElement.alt = randomPhoto.caption;
             captionElement.textContent = randomPhoto.caption;
+            console.log(`Random photo displayed: ${randomPhoto.caption}`);
         } else {
-            console.error('Elements for random photo not found');
+            console.error('Random photo elements not found or random photo data is missing');
         }
     }
 
