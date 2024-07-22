@@ -17,34 +17,33 @@ document.addEventListener("DOMContentLoaded", function() {
             displayRandomPhoto(data);
 
             // Calculate tag counts and display images
-            data.forEach(imageData => {
+            data.forEach((imageData, index) => {
                 // Create a container for the image and caption
                 const imgContainer = document.createElement('div');
-            
+                imgContainer.classList.add('img-container');
+
                 // Create and configure the image element
                 const img = new Image();
                 img.src = imageData.url;
                 img.classList.add('grid-image');
                 img.loading = 'lazy';
-            
+
                 // Append the image to the container
                 imgContainer.appendChild(img);
-            
+
                 // Create and configure the caption element
                 const caption = document.createElement('div');
                 caption.classList.add('caption');
                 caption.textContent = imageData.caption;
-            
+
                 // Append the caption to the container
                 imgContainer.appendChild(caption);
-            
+
                 // Append the container to the appropriate column
                 columns[columnIndex % columns.length].appendChild(imgContainer);
+                console.log(`Image ${index + 1} added to column ${columnIndex % columns.length}`);
                 columnIndex++;
             });
-
-            // Update tag counts in the DOM
-            updateTagCounts(tagCounts);
         })
         .catch(error => console.error('Error fetching images:', error));
 
@@ -85,6 +84,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const playButton = document.querySelector('.play-button');
     const audio = document.getElementById('myAudio');
 
+    // Restore audio state from local storage
+    const audioState = localStorage.getItem('audioState');
+    if (audioState === 'playing') {
+        audio.play();
+        playButton.innerHTML = "<b>stop</b>";
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+        playButton.innerHTML = "<b>play</b>";
+    }
+
     if (playButton && audio) {
         playButton.addEventListener('click', toggleAudio);
         audio.onended = () => {
@@ -98,10 +108,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (audio.paused) {
             audio.play();
             playButton.innerHTML = "<b>stop</b>";
+            localStorage.setItem('audioState', 'playing');
         } else {
             audio.pause();
             audio.currentTime = 0;
             playButton.innerHTML = "<b>play</b>";
+            localStorage.setItem('audioState', 'paused');
         }
     }
 
