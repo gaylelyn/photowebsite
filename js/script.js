@@ -1,22 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Fetch images data from JSON
     fetch('images.json')
         .then(response => response.json())
         .then(data => {
-            // Initialize variables
             const columns = document.querySelectorAll('.column');
             let columnIndex = 0;
-            const tagCounts = {
-                singapore: 0,
-                japan: 0,
-                ustates: 0,
-                bw: 0
-            };
 
-            // Display a random photo
-            displayRandomPhoto(data);
-
-            // Calculate tag counts and display images
             data.forEach((imageData, index) => {
                 // Create a container for the image and caption
                 const imgContainer = document.createElement('div');
@@ -84,17 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const playButton = document.querySelector('.play-button');
     const audio = document.getElementById('myAudio');
 
-    // Restore audio state from local storage
-    const audioState = localStorage.getItem('audioState');
-    if (audioState === 'playing') {
-        audio.play();
-        playButton.innerHTML = "<b>stop</b>";
-    } else {
-        audio.pause();
-        audio.currentTime = 0;
-        playButton.innerHTML = "<b>play</b>";
-    }
-
     if (playButton && audio) {
         playButton.addEventListener('click', toggleAudio);
         audio.onended = () => {
@@ -108,12 +85,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (audio.paused) {
             audio.play();
             playButton.innerHTML = "<b>stop</b>";
-            localStorage.setItem('audioState', 'playing');
         } else {
             audio.pause();
             audio.currentTime = 0;
             playButton.innerHTML = "<b>play</b>";
-            localStorage.setItem('audioState', 'paused');
         }
     }
 
