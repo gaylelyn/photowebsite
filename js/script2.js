@@ -36,7 +36,8 @@ function calculateTagCounts(data) {
         singapore: 0,
         japan: 0,
         ustates: 0,
-        bw: 0
+        bw: 0,
+        viet: 0
     };
 
     data.forEach(imageData => {
