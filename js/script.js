@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const japanCountElement = document.getElementById('japan-count');
         const ustatesCountElement = document.getElementById('ustates-count');
         const bwCountElement = document.getElementById('bw-count');
-        const bwCountElement = document.getElementById('viet-count');
+        const vietCountElement = document.getElementById('viet-count');
 
         if (singaporeCountElement && japanCountElement && ustatesCountElement && bwCountElement) {
             singaporeCountElement.textContent = tagCounts.singapore;
