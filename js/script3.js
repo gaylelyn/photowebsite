@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('japan-count').textContent = tagCounts.japan;
             document.getElementById('ustates-count').textContent = tagCounts.ustates;
             document.getElementById('bw-count').textContent = tagCounts.bw;
+            document.getElementById('viet-count').textContent = tagCounts.viet;
 
             console.log('Tag counts:', tagCounts);
         })

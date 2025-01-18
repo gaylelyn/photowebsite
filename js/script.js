@@ -41,12 +41,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const japanCountElement = document.getElementById('japan-count');
         const ustatesCountElement = document.getElementById('ustates-count');
         const bwCountElement = document.getElementById('bw-count');
+        const bwCountElement = document.getElementById('viet-count');
 
         if (singaporeCountElement && japanCountElement && ustatesCountElement && bwCountElement) {
             singaporeCountElement.textContent = tagCounts.singapore;
             japanCountElement.textContent = tagCounts.japan;
             ustatesCountElement.textContent = tagCounts.ustates;
             bwCountElement.textContent = tagCounts.bw;
+            bwCountElement.textContent = tagCounts.viet;
         } else {
             console.error('One or more tag count elements not found');
         }
