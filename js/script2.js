@@ -57,6 +57,7 @@ function calculateTagCounts(data) {
     document.getElementById('ustates-count').textContent = tagCounts.ustates;
     document.getElementById('bw-count').textContent = tagCounts.bw;
     document.getElementById('viet-count').textContent = tagCounts.viet;
+    document.getElementById('china-count').textContent = tagCounts.china;
 }
 
 

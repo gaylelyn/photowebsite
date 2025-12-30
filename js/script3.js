@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 japan: 0,
                 ustates: 0,
                 bw: 0,
-                viet: 0
+                viet: 0,
+                china: 0
             };
 
             // Display a random photo
@@ -56,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('ustates-count').textContent = tagCounts.ustates;
             document.getElementById('bw-count').textContent = tagCounts.bw;
             document.getElementById('viet-count').textContent = tagCounts.viet;
+            document.getElementById('china-count').textContent = tagCounts.china;
 
             console.log('Tag counts:', tagCounts);
         })
