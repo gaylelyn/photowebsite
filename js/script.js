@@ -43,14 +43,16 @@ document.addEventListener("DOMContentLoaded", function() {
         const bwCountElement = document.getElementById('bw-count');
         const vietCountElement = document.getElementById('viet-count');
         const chinaCountElement = document.getElementById('china-count');
+        const taiwanCountElement = document.getElementById('taiwan-count');
 
-        if (singaporeCountElement && japanCountElement && ustatesCountElement && bwCountElement && vietCountElement && chinaCountElement) {
+        if (singaporeCountElement && japanCountElement && ustatesCountElement && bwCountElement && vietCountElement && chinaCountElement && taiwanCountElement) {
             singaporeCountElement.textContent = tagCounts.singapore;
             japanCountElement.textContent = tagCounts.japan;
             ustatesCountElement.textContent = tagCounts.ustates;
             bwCountElement.textContent = tagCounts.bw;
             vietCountElement.textContent = tagCounts.viet;
             chinaCountElement.textContent = tagCounts.china;
+            taiwanCountElement.textContent = tagCounts.taiwan;
         } else {
             console.error('One or more tag count elements not found');
         }

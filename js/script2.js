@@ -38,7 +38,8 @@ function calculateTagCounts(data) {
         ustates: 0,
         bw: 0,
         viet: 0,
-        china: 0
+        china: 0,
+        taiwan:0
     };
 
     data.forEach(imageData => {
@@ -59,6 +60,7 @@ function calculateTagCounts(data) {
     document.getElementById('bw-count').textContent = tagCounts.bw;
     document.getElementById('viet-count').textContent = tagCounts.viet;
     document.getElementById('china-count').textContent = tagCounts.china;
+    document.getElementById('taiwan-count').textContent = tagCounts.taiwan;
 }
 
 
